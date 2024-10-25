@@ -1,0 +1,269 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Oct 25 02:37:08 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk160n" LOCATE = SITE "AB5" LEVEL 1;
+COMP "clk160p" LOCATE = SITE "AB6" LEVEL 1;
+COMP "led_fp<0>" LOCATE = SITE "AF24" LEVEL 1;
+COMP "led_fp<1>" LOCATE = SITE "AF25" LEVEL 1;
+COMP "led_fp<2>" LOCATE = SITE "W24" LEVEL 1;
+COMP "led_fp<3>" LOCATE = SITE "V24" LEVEL 1;
+COMP "led_fp<4>" LOCATE = SITE "H24" LEVEL 1;
+COMP "led_fp<5>" LOCATE = SITE "H25" LEVEL 1;
+COMP "led_fp<6>" LOCATE = SITE "P24" LEVEL 1;
+COMP "led_fp<7>" LOCATE = SITE "R24" LEVEL 1;
+COMP "reset" LOCATE = SITE "U25" LEVEL 1;
+COMP "clk40n" LOCATE = SITE "B10" LEVEL 1;
+COMP "clk40p" LOCATE = SITE "A10" LEVEL 1;
+COMP "inject" LOCATE = SITE "U26" LEVEL 1;
+COMP "rxn<0>" LOCATE = SITE "AP6" LEVEL 1;
+COMP "rxn<1>" LOCATE = SITE "AM6" LEVEL 1;
+COMP "rxn<2>" LOCATE = SITE "AL4" LEVEL 1;
+COMP "rxn<3>" LOCATE = SITE "AJ4" LEVEL 1;
+COMP "rxn<4>" LOCATE = SITE "AA4" LEVEL 1;
+COMP "rxn<5>" LOCATE = SITE "W4" LEVEL 1;
+COMP "rxn<6>" LOCATE = SITE "U4" LEVEL 1;
+COMP "rxn<7>" LOCATE = SITE "R4" LEVEL 1;
+COMP "rxp<0>" LOCATE = SITE "AP5" LEVEL 1;
+COMP "rxp<1>" LOCATE = SITE "AM5" LEVEL 1;
+COMP "rxp<2>" LOCATE = SITE "AL3" LEVEL 1;
+COMP "rxp<3>" LOCATE = SITE "AJ3" LEVEL 1;
+COMP "rxp<4>" LOCATE = SITE "AA3" LEVEL 1;
+COMP "rxp<5>" LOCATE = SITE "W3" LEVEL 1;
+COMP "rxp<6>" LOCATE = SITE "U3" LEVEL 1;
+COMP "rxp<7>" LOCATE = SITE "R3" LEVEL 1;
+COMP "txn<0>" LOCATE = SITE "AK2" LEVEL 1;
+COMP "txn<1>" LOCATE = SITE "AH2" LEVEL 1;
+COMP "txn<2>" LOCATE = SITE "AB2" LEVEL 1;
+COMP "txn<3>" LOCATE = SITE "Y2" LEVEL 1;
+COMP "txn<4>" LOCATE = SITE "V2" LEVEL 1;
+COMP "txn<5>" LOCATE = SITE "T2" LEVEL 1;
+COMP "txn<6>" LOCATE = SITE "P2" LEVEL 1;
+COMP "txn<7>" LOCATE = SITE "AM2" LEVEL 1;
+COMP "txp<0>" LOCATE = SITE "AK1" LEVEL 1;
+COMP "txp<1>" LOCATE = SITE "AH1" LEVEL 1;
+COMP "txp<2>" LOCATE = SITE "AB1" LEVEL 1;
+COMP "txp<3>" LOCATE = SITE "Y1" LEVEL 1;
+COMP "txp<4>" LOCATE = SITE "V1" LEVEL 1;
+COMP "txp<5>" LOCATE = SITE "T1" LEVEL 1;
+COMP "txp<6>" LOCATE = SITE "P1" LEVEL 1;
+COMP "txp<7>" LOCATE = SITE "AM1" LEVEL 1;
+COMP "_ccb_rx<10>" LOCATE = SITE "AE27" LEVEL 1;
+COMP "_ccb_rx<11>" LOCATE = SITE "AD25" LEVEL 1;
+COMP "_ccb_rx<12>" LOCATE = SITE "AD26" LEVEL 1;
+COMP "_ccb_rx<20>" LOCATE = SITE "AK33" LEVEL 1;
+COMP "_ccb_rx<13>" LOCATE = SITE "AE26" LEVEL 1;
+COMP "_ccb_rx<21>" LOCATE = SITE "AK34" LEVEL 1;
+COMP "_ccb_rx<14>" LOCATE = SITE "AM30" LEVEL 1;
+COMP "_ccb_rx<22>" LOCATE = SITE "AL33" LEVEL 1;
+COMP "_ccb_rx<30>" LOCATE = SITE "AM33" LEVEL 1;
+COMP "_ccb_rx<15>" LOCATE = SITE "AP29" LEVEL 1;
+COMP "_ccb_rx<23>" LOCATE = SITE "AL31" LEVEL 1;
+COMP "_ccb_rx<31>" LOCATE = SITE "AN34" LEVEL 1;
+COMP "_ccb_rx<16>" LOCATE = SITE "AM28" LEVEL 1;
+COMP "_ccb_rx<24>" LOCATE = SITE "AL30" LEVEL 1;
+COMP "_ccb_rx<32>" LOCATE = SITE "AN33" LEVEL 1;
+COMP "_ccb_rx<40>" LOCATE = SITE "AA30" LEVEL 1;
+COMP "_ccb_rx<17>" LOCATE = SITE "AK31" LEVEL 1;
+COMP "_ccb_rx<25>" LOCATE = SITE "AK32" LEVEL 1;
+COMP "_ccb_rx<33>" LOCATE = SITE "AP33" LEVEL 1;
+COMP "_ccb_rx<41>" LOCATE = SITE "Y29" LEVEL 1;
+COMP "_ccb_rx<18>" LOCATE = SITE "AB28" LEVEL 1;
+COMP "_ccb_rx<26>" LOCATE = SITE "AL34" LEVEL 1;
+COMP "_ccb_rx<34>" LOCATE = SITE "AA26" LEVEL 1;
+COMP "_ccb_rx<42>" LOCATE = SITE "Y26" LEVEL 1;
+COMP "_ccb_rx<50>" LOCATE = SITE "AH32" LEVEL 1;
+COMP "_ccb_rx<19>" LOCATE = SITE "AH30" LEVEL 1;
+COMP "_ccb_rx<27>" LOCATE = SITE "AJ30" LEVEL 1;
+COMP "_ccb_rx<35>" LOCATE = SITE "AB27" LEVEL 1;
+COMP "_ccb_rx<43>" LOCATE = SITE "AG31" LEVEL 1;
+COMP "_ccb_rx<28>" LOCATE = SITE "AJ29" LEVEL 1;
+COMP "_ccb_rx<36>" LOCATE = SITE "AA28" LEVEL 1;
+COMP "_ccb_rx<44>" LOCATE = SITE "AH34" LEVEL 1;
+COMP "_ccb_rx<29>" LOCATE = SITE "AH29" LEVEL 1;
+COMP "_ccb_rx<37>" LOCATE = SITE "Y27" LEVEL 1;
+COMP "_ccb_rx<45>" LOCATE = SITE "AJ34" LEVEL 1;
+COMP "_ccb_rx<38>" LOCATE = SITE "AA29" LEVEL 1;
+COMP "_ccb_rx<46>" LOCATE = SITE "AA31" LEVEL 1;
+COMP "_ccb_rx<39>" LOCATE = SITE "AG32" LEVEL 1;
+COMP "_ccb_rx<47>" LOCATE = SITE "Y28" LEVEL 1;
+COMP "_ccb_rx<48>" LOCATE = SITE "AH33" LEVEL 1;
+COMP "_ccb_rx<49>" LOCATE = SITE "AA25" LEVEL 1;
+COMP "_ccb_rx<0>" LOCATE = SITE "AG28" LEVEL 1;
+COMP "_ccb_rx<1>" LOCATE = SITE "AM32" LEVEL 1;
+COMP "_ccb_rx<2>" LOCATE = SITE "AN32" LEVEL 1;
+COMP "_ccb_rx<3>" LOCATE = SITE "AG27" LEVEL 1;
+COMP "_ccb_rx<4>" LOCATE = SITE "AC25" LEVEL 1;
+COMP "_ccb_rx<5>" LOCATE = SITE "AD27" LEVEL 1;
+COMP "_ccb_rx<6>" LOCATE = SITE "AP32" LEVEL 1;
+COMP "_ccb_rx<7>" LOCATE = SITE "AM31" LEVEL 1;
+COMP "_ccb_rx<8>" LOCATE = SITE "AP30" LEVEL 1;
+COMP "_ccb_rx<9>" LOCATE = SITE "AF26" LEVEL 1;
+COMP "gtx8_Fiber_i/gtxe1_i" LOCATE = SITE "GTXE1_X0Y8" LEVEL 1;
+COMP "gtx10_Fiber_i/gtxe1_i" LOCATE = SITE "GTXE1_X0Y10" LEVEL 1;
+TIMEGRP clk40 = BEL "ccb_rx_iobff_a_2" BEL "ccb_rx_iobff_a_3" BEL
+        "ccb_rx_iobff_a_4" BEL "ccb_rx_iobff_a_5" BEL "ccb_rx_iobff_a_6" BEL
+        "ccb_rx_iobff_a_7" BEL "ccb_rx_iobff_a_10" BEL "ccb_cmd_dec_0" BEL
+        "ccb_cmd_dec_1" BEL "ccb_cmd_dec_2" BEL "clk40_display/clock_out" BEL
+        "clk40_display/counter_0" BEL "clk40_display/counter_1" BEL
+        "clk40_display/counter_2" BEL "clk40_display/counter_3" BEL
+        "clk40_display/counter_4" BEL "clk40_display/counter_5" BEL
+        "clk40_display/counter_6" BEL "clk40_display/counter_7" BEL
+        "clk40_display/counter_8" BEL "clk40_display/counter_9" BEL
+        "clk40_display/counter_10" BEL "clk40_display/counter_11" BEL
+        "clk40_display/counter_12" BEL "clk40_display/counter_13" BEL
+        "clk40_display/counter_14" BEL "clk40_display/counter_15" BEL
+        "clk40_display/counter_16" BEL "clk40_display/counter_17" BEL
+        "clk40_display/counter_18" BEL "clk40_display/counter_19" BEL
+        "clk40_display/counter_20" BEL "clk40_display/counter_21" BEL
+        "state_FSM_FFd4" BEL "state_FSM_FFd3" BEL "state_FSM_FFd2" BEL
+        "state_FSM_FFd1" BEL "clk40_BUFG";
+PIN gtx7_Fiber_i/gtxe1_i_pins<130> = BEL "gtx7_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx7_Fiber_i/gtxe1_i_pins<267> = BEL "gtx7_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx4_Fiber_i/gtxe1_i_pins<130> = BEL "gtx4_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx4_Fiber_i/gtxe1_i_pins<267> = BEL "gtx4_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx11_Fiber_i/gtxe1_i_pins<134> = BEL "gtx11_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx11_Fiber_i/gtxe1_i_pins<271> = BEL "gtx11_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx10_Fiber_i/gtxe1_i_pins<134> = BEL "gtx10_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx10_Fiber_i/gtxe1_i_pins<271> = BEL "gtx10_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx9_Fiber_i/gtxe1_i_pins<134> = BEL "gtx9_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx9_Fiber_i/gtxe1_i_pins<271> = BEL "gtx9_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx8_Fiber_i/gtxe1_i_pins<134> = BEL "gtx8_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx8_Fiber_i/gtxe1_i_pins<271> = BEL "gtx8_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx3_Fiber_i/gtxe1_i_pins<133> = BEL "gtx3_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx3_Fiber_i/gtxe1_i_pins<270> = BEL "gtx3_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx2_Fiber_i/gtxe1_i_pins<133> = BEL "gtx2_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx2_Fiber_i/gtxe1_i_pins<270> = BEL "gtx2_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx1_Fiber_i/gtxe1_i_pins<133> = BEL "gtx1_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx1_Fiber_i/gtxe1_i_pins<267> = BEL "gtx1_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+PIN gtx0_Fiber_i/gtxe1_i_pins<133> = BEL "gtx0_Fiber_i/gtxe1_i" PINNAME
+        RXUSRCLK2;
+PIN gtx0_Fiber_i/gtxe1_i_pins<268> = BEL "gtx0_Fiber_i/gtxe1_i" PINNAME
+        TXUSRCLK2;
+TIMEGRP txusrclk2 = BEL "latched_error_7" BEL "latched_error_6" BEL
+        "latched_error_5" BEL "latched_error_4" BEL "counter_noover_3/out_1"
+        BEL "counter_noover_3/out_0" BEL "counter_noover_2/out_1" BEL
+        "counter_noover_2/out_0" BEL "counter_noover_1/out_1" BEL
+        "counter_noover_1/out_0" BEL "counter_noover_0/out_1" BEL
+        "counter_noover_0/out_0" PIN "gtx7_Fiber_i/gtxe1_i_pins<130>" PIN
+        "gtx7_Fiber_i/gtxe1_i_pins<267>" PIN "gtx7_Fiber_i/gtxe1_i_pins<130>"
+        PIN "gtx7_Fiber_i/gtxe1_i_pins<267>" PIN
+        "gtx4_Fiber_i/gtxe1_i_pins<130>" PIN "gtx4_Fiber_i/gtxe1_i_pins<267>"
+        PIN "gtx4_Fiber_i/gtxe1_i_pins<130>" PIN
+        "gtx4_Fiber_i/gtxe1_i_pins<267>" PIN "gtx11_Fiber_i/gtxe1_i_pins<134>"
+        PIN "gtx11_Fiber_i/gtxe1_i_pins<271>" PIN
+        "gtx11_Fiber_i/gtxe1_i_pins<134>" PIN
+        "gtx11_Fiber_i/gtxe1_i_pins<271>" PIN
+        "gtx10_Fiber_i/gtxe1_i_pins<134>" PIN
+        "gtx10_Fiber_i/gtxe1_i_pins<271>" PIN
+        "gtx10_Fiber_i/gtxe1_i_pins<134>" PIN
+        "gtx10_Fiber_i/gtxe1_i_pins<271>" PIN "gtx9_Fiber_i/gtxe1_i_pins<134>"
+        PIN "gtx9_Fiber_i/gtxe1_i_pins<271>" PIN
+        "gtx9_Fiber_i/gtxe1_i_pins<134>" PIN "gtx9_Fiber_i/gtxe1_i_pins<271>"
+        PIN "gtx8_Fiber_i/gtxe1_i_pins<134>" PIN
+        "gtx8_Fiber_i/gtxe1_i_pins<271>" PIN "gtx8_Fiber_i/gtxe1_i_pins<134>"
+        PIN "gtx8_Fiber_i/gtxe1_i_pins<271>" PIN
+        "gtx3_Fiber_i/gtxe1_i_pins<133>" PIN "gtx3_Fiber_i/gtxe1_i_pins<270>"
+        PIN "gtx3_Fiber_i/gtxe1_i_pins<133>" PIN
+        "gtx3_Fiber_i/gtxe1_i_pins<270>" PIN "gtx2_Fiber_i/gtxe1_i_pins<133>"
+        PIN "gtx2_Fiber_i/gtxe1_i_pins<270>" PIN
+        "gtx2_Fiber_i/gtxe1_i_pins<133>" PIN "gtx2_Fiber_i/gtxe1_i_pins<270>"
+        PIN "gtx1_Fiber_i/gtxe1_i_pins<133>" PIN
+        "gtx1_Fiber_i/gtxe1_i_pins<267>" PIN "gtx1_Fiber_i/gtxe1_i_pins<133>"
+        PIN "gtx1_Fiber_i/gtxe1_i_pins<267>" PIN
+        "gtx0_Fiber_i/gtxe1_i_pins<133>" PIN "gtx0_Fiber_i/gtxe1_i_pins<268>"
+        PIN "gtx0_Fiber_i/gtxe1_i_pins<133>" PIN
+        "gtx0_Fiber_i/gtxe1_i_pins<268>" BEL "Mshreg_ttc_resync_sync" BEL
+        "ttc_resync_sync" BEL "Mshreg_ttc_bxreset_sync" BEL "ttc_bxreset_sync"
+        BEL "Mshreg_ttc_bx0_dec_sync" BEL "ttc_bx0_dec_sync";
+PIN gtx7_Fiber_i/gtxe1_i_pins<73> = BEL "gtx7_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx7_Fiber_i/gtxe1_i_pins<74> = BEL "gtx7_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx4_Fiber_i/gtxe1_i_pins<73> = BEL "gtx4_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx4_Fiber_i/gtxe1_i_pins<74> = BEL "gtx4_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx11_Fiber_i/gtxe1_i_pins<73> = BEL "gtx11_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx11_Fiber_i/gtxe1_i_pins<74> = BEL "gtx11_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx10_Fiber_i/gtxe1_i_pins<73> = BEL "gtx10_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx10_Fiber_i/gtxe1_i_pins<74> = BEL "gtx10_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx9_Fiber_i/gtxe1_i_pins<73> = BEL "gtx9_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx9_Fiber_i/gtxe1_i_pins<74> = BEL "gtx9_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx8_Fiber_i/gtxe1_i_pins<73> = BEL "gtx8_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx8_Fiber_i/gtxe1_i_pins<74> = BEL "gtx8_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx3_Fiber_i/gtxe1_i_pins<73> = BEL "gtx3_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx3_Fiber_i/gtxe1_i_pins<74> = BEL "gtx3_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx2_Fiber_i/gtxe1_i_pins<73> = BEL "gtx2_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx2_Fiber_i/gtxe1_i_pins<74> = BEL "gtx2_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx1_Fiber_i/gtxe1_i_pins<73> = BEL "gtx1_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx1_Fiber_i/gtxe1_i_pins<74> = BEL "gtx1_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+PIN gtx0_Fiber_i/gtxe1_i_pins<73> = BEL "gtx0_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKRX0;
+PIN gtx0_Fiber_i/gtxe1_i_pins<74> = BEL "gtx0_Fiber_i/gtxe1_i" PINNAME
+        MGTREFCLKTX0;
+TIMEGRP q1_clk1_refclk_i = PIN "gtx7_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx7_Fiber_i/gtxe1_i_pins<74>" PIN "gtx7_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx7_Fiber_i/gtxe1_i_pins<74>" PIN
+        "gtx4_Fiber_i/gtxe1_i_pins<73>" PIN "gtx4_Fiber_i/gtxe1_i_pins<74>"
+        PIN "gtx4_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx4_Fiber_i/gtxe1_i_pins<74>" PIN "gtx11_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx11_Fiber_i/gtxe1_i_pins<74>" PIN
+        "gtx11_Fiber_i/gtxe1_i_pins<73>" PIN "gtx11_Fiber_i/gtxe1_i_pins<74>"
+        PIN "gtx10_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx10_Fiber_i/gtxe1_i_pins<74>" PIN "gtx10_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx10_Fiber_i/gtxe1_i_pins<74>" PIN
+        "gtx9_Fiber_i/gtxe1_i_pins<73>" PIN "gtx9_Fiber_i/gtxe1_i_pins<74>"
+        PIN "gtx9_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx9_Fiber_i/gtxe1_i_pins<74>" PIN "gtx8_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx8_Fiber_i/gtxe1_i_pins<74>" PIN
+        "gtx8_Fiber_i/gtxe1_i_pins<73>" PIN "gtx8_Fiber_i/gtxe1_i_pins<74>"
+        PIN "gtx3_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx3_Fiber_i/gtxe1_i_pins<74>" PIN "gtx3_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx3_Fiber_i/gtxe1_i_pins<74>" PIN
+        "gtx2_Fiber_i/gtxe1_i_pins<73>" PIN "gtx2_Fiber_i/gtxe1_i_pins<74>"
+        PIN "gtx2_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx2_Fiber_i/gtxe1_i_pins<74>" PIN "gtx1_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx1_Fiber_i/gtxe1_i_pins<74>" PIN
+        "gtx1_Fiber_i/gtxe1_i_pins<73>" PIN "gtx1_Fiber_i/gtxe1_i_pins<74>"
+        PIN "gtx0_Fiber_i/gtxe1_i_pins<73>" PIN
+        "gtx0_Fiber_i/gtxe1_i_pins<74>" PIN "gtx0_Fiber_i/gtxe1_i_pins<73>"
+        PIN "gtx0_Fiber_i/gtxe1_i_pins<74>";
+TS_q4_clk1_refclk_i = PERIOD TIMEGRP "q1_clk1_refclk_i" 6.25 ns HIGH 50%;
+TS_txusrclk2 = PERIOD TIMEGRP "txusrclk2" 6.25 ns HIGH 50%;
+TS_clk40 = PERIOD TIMEGRP "clk40" 25 ns HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,144 @@
+#----------------------------------------------------------------------------------------------------------
+#
+# TMB2019 UCF for Virtex6 XC6VLX240T, prototype mezzanine card schematic 2019
+#
+#----------------------------------------------------------------------------------------------------------
+
+NET "led_fp[0]"		LOC = "AF24";	# I/O_521	** Dual use output: BPI Flash PROM Data D00
+NET "led_fp[1]"		LOC = "AF25";	# I/O_522	** Dual use output: BPI Flash PROM Data D01
+NET "led_fp[2]"		LOC = "W24";	# I/O_523	** Dual use output: BPI Flash PROM Data D02
+NET "led_fp[3]"		LOC = "V24";	# I/O_524	** Dual use output: BPI Flash PROM Data D03
+NET "led_fp[4]"		LOC = "H24";	# I/O_525	** Dual use output: BPI Flash PROM Data D04
+NET "led_fp[5]"		LOC = "H25";	# I/O_526	** Dual use output: BPI Flash PROM Data D05
+NET "led_fp[6]"		LOC = "P24";	# I/O_527	** Dual use output: BPI Flash PROM Data D06
+NET "led_fp[7]"		LOC = "R24";	# I/O_528	** Dual use output: BPI Flash PROM Data D07
+
+NET "clk160p" LOC = "AB6" ; #MGTREFCLK1P_113
+NET "clk160n" LOC = "AB5" ; 
+
+# CERN QPLL
+NET "clk40p"		LOC = "A10" | IOSTANDARD = "LVDS_25";  # Differential 40 MHz from QPLL, aka lhc_ckp
+NET "clk40n"		LOC = "B10" | IOSTANDARD = "LVDS_25";  # Differential 40 MHz from QPLL, aka lhc_ckn
+
+# location for snap fiber1   mgt: gtx3/rx0 ;;;index 0
+NET "txn[0]" LOC = AK2; #MGTTXN3_112
+NET "txp[0]" LOC = AK1;
+NET "rxn[0]" LOC = AP6; #MGTRXN0_112
+NET "rxp[0]" LOC = AP5; #MGTRXP0_112
+
+# location for snap fiber2   mgt: gtx4/rx1 ;;;index 1
+NET "txn[1]" LOC = AH2;
+NET "txp[1]" LOC = AH1; #MGTTXN0_113
+NET "rxn[1]" LOC = AM6; #MGTRXN1_112
+NET "rxp[1]" LOC = AM5;
+
+# location for snap fiber3   mgt: gtx7/rx2 ;;;index 2
+NET "txn[2]" LOC = AB2;
+NET "txp[2]" LOC = AB1; #MGTTXN3_113
+NET "rxn[2]" LOC = AL4; #MGTRXN2_112
+NET "rxp[2]" LOC = AL3;
+
+# location for snap fiber4   mgt: gtx8/rx3 ;;;index 3
+NET "txn[3]" LOC = Y2;
+NET "txp[3]" LOC = Y1;  #MGTTXP0_114
+NET "rxn[3]" LOC = AJ4; #MGTRXN3_112
+NET "rxp[3]" LOC = AJ3;
+
+# location for snap fiber9   mgt: gtx9/rx8 ;;;index 4
+NET "txn[4]" LOC = V2;
+NET "txp[4]" LOC = V1;  #MGTTXP1_114
+NET "rxn[4]" LOC = AA4;
+NET "rxp[4]" LOC = AA3; #MGTRXP0_114
+
+# location for snap fiber10   mgt: gtx10/rx9 ;;;index 5
+NET "txn[5]" LOC = T2; #MGTTXN2_114
+NET "txp[5]" LOC = T1;
+NET "rxn[5]" LOC = W4; #MGTRXN1_114 # note that this Rx pair has N/P swapped due to routing mistake, so reverse polarity in Firmware to mitigate
+NET "rxp[5]" LOC = W3;
+
+# location for snap fiber11   mgt: gtx11/rx10 ;;;index 6
+NET "txn[6]" LOC = P2; #MGTTXN3_114
+NET "txp[6]" LOC = P1;
+NET "rxn[6]" LOC = U4; #MGTRXN2_114 # note that this Rx pair has N/P swapped due to routing mistake, so reverse polarity in Firmware to mitigate
+NET "rxp[6]" LOC = U3;
+
+# location for snap fiber12   mgt: gtx2/rx11 ;;;index 7
+NET "txn[7]" LOC = AM2; #MGTTXN2_112
+NET "txp[7]" LOC = AM1;
+NET "rxn[7]" LOC = R4;  #MGTRXN3_114
+NET "rxp[7]" LOC = R3;
+
+NET "reset"  LOC = U25;
+NET "inject" LOC = U26;
+
+NET "_ccb_rx<0>"	LOC = "AG28";	# I/O_36
+NET "_ccb_rx<1>"	LOC = "AM32";	# I/O_37
+NET "_ccb_rx<2>"	LOC = "AN32";	# I/O_38
+NET "_ccb_rx<3>"	LOC = "AG27";	# I/O_39
+NET "_ccb_rx<4>"	LOC = "AC25";	# I/O_40
+NET "_ccb_rx<5>"	LOC = "AD27";	# I/O_41
+NET "_ccb_rx<6>"	LOC = "AP32";	# I/O_42
+NET "_ccb_rx<7>"	LOC = "AM31";	# I/O_43
+NET "_ccb_rx<8>"	LOC = "AP30";	# I/O_44
+NET "_ccb_rx<9>"	LOC = "AF26";	# I/O_45
+NET "_ccb_rx<10>"	LOC = "AE27";	# I/O_46
+NET "_ccb_rx<11>"	LOC = "AD25";	# I/O_47
+NET "_ccb_rx<12>"	LOC = "AD26";	# I/O_48
+NET "_ccb_rx<13>"	LOC = "AE26";	# I/O_49
+NET "_ccb_rx<14>"	LOC = "AM30";	# I/O_50
+NET "_ccb_rx<15>"	LOC = "AP29";	# I/O_51
+NET "_ccb_rx<16>"	LOC = "AM28";	# I/O_52
+NET "_ccb_rx<17>"	LOC = "AK31";	# I/O_53
+NET "_ccb_rx<18>"	LOC = "AB28";	# I/O_20
+NET "_ccb_rx<19>"	LOC = "AH30";	# I/O_21
+NET "_ccb_rx<20>"	LOC = "AK33";	# I/O_22
+NET "_ccb_rx<21>"	LOC = "AK34";	# I/O_23
+NET "_ccb_rx<22>"	LOC = "AL33";	# I/O_24
+NET "_ccb_rx<23>"	LOC = "AL31";	# I/O_25
+NET "_ccb_rx<24>"	LOC = "AL30";	# I/O_26
+NET "_ccb_rx<25>"	LOC = "AK32";	# I/O_27
+NET "_ccb_rx<26>"	LOC = "AL34";	# I/O_28
+NET "_ccb_rx<27>"	LOC = "AJ30";	# I/O_29
+NET "_ccb_rx<28>"	LOC = "AJ29";	# I/O_30
+NET "_ccb_rx<29>"	LOC = "AH29";	# I/O_31
+NET "_ccb_rx<30>"	LOC = "AM33";	# I/O_32
+NET "_ccb_rx<31>"	LOC = "AN34";	# I/O_33
+NET "_ccb_rx<32>"	LOC = "AN33";	# I/O_34
+NET "_ccb_rx<33>"	LOC = "AP33";	# I/O_35
+NET "_ccb_rx<34>"	LOC = "AA26";	# I/O_491
+NET "_ccb_rx<35>"	LOC = "AB27";	# I/O_492
+NET "_ccb_rx<36>"	LOC = "AA28";	# I/O_516
+NET "_ccb_rx<37>"	LOC = "Y27";	# I/O_477
+NET "_ccb_rx<38>"	LOC = "AA29";	# I/O_478
+NET "_ccb_rx<39>"	LOC = "AG32";	# I/O_479
+NET "_ccb_rx<40>"	LOC = "AA30";	# I/O_480
+NET "_ccb_rx<41>"	LOC = "Y29";	# I/O_481
+NET "_ccb_rx<42>"	LOC = "Y26";	# I/O_482
+NET "_ccb_rx<43>"	LOC = "AG31";	# I/O_483
+NET "_ccb_rx<44>"	LOC = "AH34";	# I/O_484
+NET "_ccb_rx<45>"	LOC = "AJ34";	# I/O_485
+NET "_ccb_rx<46>"	LOC = "AA31";	# I/O_486
+NET "_ccb_rx<47>"	LOC = "Y28";	# I/O_487
+NET "_ccb_rx<48>"	LOC = "AH33";	# I/O_488
+NET "_ccb_rx<49>"	LOC = "AA25";	# I/O_489
+NET "_ccb_rx<50>"	LOC = "AH32";	# I/O_490
+
+
+
+NET "q1_clk1_refclk_i" TNM_NET = "q1_clk1_refclk_i";
+TIMESPEC "TS_q4_clk1_refclk_i" = PERIOD "q1_clk1_refclk_i" 6.25;
+
+# User Clock Constraints
+NET "txusrclk2" TNM_NET = "txusrclk2";
+TIMESPEC "TS_txusrclk2" = PERIOD "txusrclk2" 6.25;
+
+NET "clk40" TNM_NET = "clk40";
+TIMESPEC "TS_clk40" = PERIOD "clk40" 25 ns HIGH 50%;
+OFFSET = IN 5 ns VALID 25 ns BEFORE "clk40";
+OFFSET = IN 5 ns VALID 25 ns AFTER "clk40";
+##---------- Set placement for gtx0_gtx_wrapper_i/GTX_DUAL ------
+INST gtx10_Fiber_i/gtxe1_i LOC=GTXE1_X0Y10;
+
+##---------- Set placement for gtx1_gtx_wrapper_i/GTX_DUAL ------
+INST gtx8_Fiber_i/gtxe1_i LOC=GTXE1_X0Y8;
+ 

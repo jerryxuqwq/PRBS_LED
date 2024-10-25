@@ -1,0 +1,5 @@
+verilog work "fiber_gtx.v"
+verilog work "counter_noover.v"
+verilog work "counter.v"
+verilog work "clock_divider.v"
+verilog work "Top.v"
