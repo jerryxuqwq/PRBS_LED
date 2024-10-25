@@ -5,10 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="ConstraintSystem" num="168" delta="new" >Constraint <arg fmt="%s" index="1">&lt;OFFSET = IN 5 ns VALID 25 ns BEFORE &quot;clk40&quot;;&gt; [otmb2019.ucf(137)]</arg>: This constraint will be ignored because <arg fmt="%s" index="2">NET &quot;clk40&quot;</arg> could not be found or was not connected to a PAD.
+<msg type="warning" file="ConstraintSystem" num="168" delta="old" >Constraint <arg fmt="%s" index="1">&lt;OFFSET = IN 5 ns VALID 25 ns BEFORE &quot;clk40&quot;;&gt; [otmb2019.ucf(137)]</arg>: This constraint will be ignored because <arg fmt="%s" index="2">NET &quot;clk40&quot;</arg> could not be found or was not connected to a PAD.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="168" delta="new" >Constraint <arg fmt="%s" index="1">&lt;OFFSET = IN 5 ns VALID 25 ns AFTER &quot;clk40&quot;;&gt; [otmb2019.ucf(138)]</arg>: This constraint will be ignored because <arg fmt="%s" index="2">NET &quot;clk40&quot;</arg> could not be found or was not connected to a PAD.
+<msg type="warning" file="ConstraintSystem" num="168" delta="old" >Constraint <arg fmt="%s" index="1">&lt;OFFSET = IN 5 ns VALID 25 ns AFTER &quot;clk40&quot;;&gt; [otmb2019.ucf(138)]</arg>: This constraint will be ignored because <arg fmt="%s" index="2">NET &quot;clk40&quot;</arg> could not be found or was not connected to a PAD.
 </msg>
 
 </messages>

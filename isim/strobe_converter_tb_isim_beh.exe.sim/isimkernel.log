@@ -1,0 +1,10 @@
+Command line:
+   strobe_converter_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  40030
+
+Fri Oct 25 12:40:15 2024
+
+
+ Elaboration Time: 0 sec

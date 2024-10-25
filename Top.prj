@@ -1,3 +1,4 @@
+verilog work "strobe_converter.v"
 verilog work "fiber_gtx.v"
 verilog work "counter_noover.v"
 verilog work "counter.v"

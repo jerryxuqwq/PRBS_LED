@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Oct 25 02:37:08 2024
+// Written by: Map P.20131013 on Fri Oct 25 12:42:09 2024
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -160,11 +160,12 @@ PIN gtx0_Fiber_i/gtxe1_i_pins<133> = BEL "gtx0_Fiber_i/gtxe1_i" PINNAME
 PIN gtx0_Fiber_i/gtxe1_i_pins<268> = BEL "gtx0_Fiber_i/gtxe1_i" PINNAME
         TXUSRCLK2;
 TIMEGRP txusrclk2 = BEL "latched_error_7" BEL "latched_error_6" BEL
-        "latched_error_5" BEL "latched_error_4" BEL "counter_noover_3/out_1"
-        BEL "counter_noover_3/out_0" BEL "counter_noover_2/out_1" BEL
-        "counter_noover_2/out_0" BEL "counter_noover_1/out_1" BEL
-        "counter_noover_1/out_0" BEL "counter_noover_0/out_1" BEL
-        "counter_noover_0/out_0" PIN "gtx7_Fiber_i/gtxe1_i_pins<130>" PIN
+        "latched_error_5" BEL "latched_error_4" BEL "ttc_bx0_dec_sync1" BEL
+        "counter_noover_3/out_1" BEL "counter_noover_3/out_0" BEL
+        "counter_noover_2/out_1" BEL "counter_noover_2/out_0" BEL
+        "counter_noover_1/out_1" BEL "counter_noover_1/out_0" BEL
+        "counter_noover_0/out_1" BEL "counter_noover_0/out_0" BEL
+        "dut/in_prev" PIN "gtx7_Fiber_i/gtxe1_i_pins<130>" PIN
         "gtx7_Fiber_i/gtxe1_i_pins<267>" PIN "gtx7_Fiber_i/gtxe1_i_pins<130>"
         PIN "gtx7_Fiber_i/gtxe1_i_pins<267>" PIN
         "gtx4_Fiber_i/gtxe1_i_pins<130>" PIN "gtx4_Fiber_i/gtxe1_i_pins<267>"
@@ -192,9 +193,9 @@ TIMEGRP txusrclk2 = BEL "latched_error_7" BEL "latched_error_6" BEL
         PIN "gtx1_Fiber_i/gtxe1_i_pins<267>" PIN
         "gtx0_Fiber_i/gtxe1_i_pins<133>" PIN "gtx0_Fiber_i/gtxe1_i_pins<268>"
         PIN "gtx0_Fiber_i/gtxe1_i_pins<133>" PIN
-        "gtx0_Fiber_i/gtxe1_i_pins<268>" BEL "Mshreg_ttc_resync_sync" BEL
-        "ttc_resync_sync" BEL "Mshreg_ttc_bxreset_sync" BEL "ttc_bxreset_sync"
-        BEL "Mshreg_ttc_bx0_dec_sync" BEL "ttc_bx0_dec_sync";
+        "gtx0_Fiber_i/gtxe1_i_pins<268>" BEL "dut/out" BEL
+        "Mshreg_ttc_bxreset_sync" BEL "ttc_bxreset_sync" BEL
+        "Mshreg_ttc_resync_sync" BEL "ttc_resync_sync";
 PIN gtx7_Fiber_i/gtxe1_i_pins<73> = BEL "gtx7_Fiber_i/gtxe1_i" PINNAME
         MGTREFCLKRX0;
 PIN gtx7_Fiber_i/gtxe1_i_pins<74> = BEL "gtx7_Fiber_i/gtxe1_i" PINNAME

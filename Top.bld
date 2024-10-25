@@ -1,11 +1,11 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+Command Line: /data/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
 -intstyle ise -dd _ngo -nt timestamp -uc otmb2019.ucf -p xc6vlx240t-ff1156-2
 Top.ngc Top.ngd
 
-Reading NGO file "C:/Users/Jerry Xu/Desktop/OTMB/PRBS_LED/Top.ngc" ...
+Reading NGO file "/home/cscdev/JerryX/OTMB/PRBS_LED/Top.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -35,10 +35,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   2
 
-Total memory usage is 4431208 kilobytes
+Total memory usage is 526268 kilobytes
 
 Writing NGD file "Top.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   0 sec
 
 Writing NGDBUILD log file "Top.bld"...

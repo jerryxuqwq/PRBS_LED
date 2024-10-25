@@ -1,0 +1,3 @@
+verilog isim_temp "strobe_converter.v"
+verilog isim_temp "strobe_converter_tb.v"
+verilog isim_temp "/data/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
