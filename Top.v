@@ -140,7 +140,7 @@ module Top(
 	reg ttc_bx0_dec_sync;
 	reg ttc_resync_sync;
 	reg ttc_bxreset_sync;
-	
+	wire ttc_bx0_dec_sync1_strobe;
 	// Cross time domain sync, go from Clk40 to txusrclk2
 	always @(posedge txusrclk2)
 	begin
@@ -154,6 +154,8 @@ module Top(
 	ttc_bxreset_sync  <= ttc_bxreset_sync1;
 	
 	end
+	
+	strobe_converter dut(txusrclk2,ttc_bx0_dec_sync,ttc_bx0_dec_sync1_strobe);
 	IBUFDS #(
 		.DIFF_TERM("FALSE"),       // Differential Termination
 		.IBUF_LOW_PWR("TRUE"),     // Low power="TRUE", Highest performance="FALSE"
@@ -314,13 +316,18 @@ module Top(
 				boot_up_counter_rst <= 1'b1;
 				full_tx_reset[0:7] <= 8'b0000_0000;
 				full_rx_reset[0:7] <= 8'b0000_0000;
-				PRBS_error_inject <= inject|ttc_bx0_dec_sync; //connect to inject later
-				//led_fp[0:3] <= 4'b1010;
+				PRBS_error_inject <= inject|ttc_bx0_dec_sync1_strobe; //connect to inject later
+				led_fp[0:3] <= 4'b1111;
+				led_fp[4] <=latched_error[4];
+				led_fp[5] <=latched_error[5];
+				led_fp[6] <=latched_error[6];
+				led_fp[7] <=latched_error[7];
 				//led_fp[4:7] <= latched_error[4:7] | blinker[4:7];
-				led_fp[0:1] <= error_counter_out_0[0:1] | blinker[0:1];
-				led_fp[2:3] <= error_counter_out_1[0:1] | blinker[0:1];
-				led_fp[4:5] <= error_counter_out_2[0:1] | blinker[0:1];
-				led_fp[6:7] <= error_counter_out_3[0:1] | blinker[0:1]; 
+				//led_fp[0:1] <= error_counter_out_0[0:1] | blinker[0:1];
+				//led_fp[2:3] <= error_counter_out_1[0:1] | blinker[0:1];
+				//led_fp[4:5] <= error_counter_out_2[0:1] | blinker[0:1];
+				//led_fp[6:7] <= error_counter_out_3[0:1] | blinker[0:1]; 
+				
 			end
 				default : begin
 				nxtState <= RESET;
