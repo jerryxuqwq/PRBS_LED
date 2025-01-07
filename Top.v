@@ -178,7 +178,7 @@ module Top(
 			boot_up_counter_rst,
 			counter_out);
 	
-	wire  [0:1]error_counter_out_0;
+/* 	wire  [0:1]error_counter_out_0;
 	wire  [0:1]error_counter_out_1;
 	wire  [0:1]error_counter_out_2;
 	wire  [0:1]error_counter_out_3;
@@ -186,7 +186,33 @@ module Top(
 	counter_noover counter_noover_0(.clk(txusrclk2),.enable(PRBS_error[4]),.rst(PRBS_counter_reset),.out(error_counter_out_0[0:1]));
 	counter_noover counter_noover_1(.clk(txusrclk2),.enable(PRBS_error[5]),.rst(PRBS_counter_reset),.out(error_counter_out_1[0:1]));
 	counter_noover counter_noover_2(.clk(txusrclk2),.enable(PRBS_error[6]),.rst(PRBS_counter_reset),.out(error_counter_out_2[0:1]));
-	counter_noover counter_noover_3(.clk(txusrclk2),.enable(PRBS_error[7]),.rst(PRBS_counter_reset),.out(error_counter_out_3[0:1]));
+	counter_noover counter_noover_3(.clk(txusrclk2),.enable(PRBS_error[7]),.rst(PRBS_counter_reset),.out(error_counter_out_3[0:1])); */
+	wire [0:3] error_display;
+	led_display led_display0(.clk(txusrclk2),
+							 .reset(PRBS_counter_reset),
+							 .blinker(blinker),
+							 .PRBS_error(PRBS_error[4]),
+							 .led(error_display[0])
+							);
+	led_display led_display1(.clk(txusrclk2),
+							 .reset(PRBS_counter_reset),
+							 .blinker(blinker),
+							 .PRBS_error(PRBS_error[5]),
+							 .led(error_display[1])
+							);
+	led_display led_display2(.clk(txusrclk2),
+							 .reset(PRBS_counter_reset),
+							 .blinker(blinker),
+							 .PRBS_error(PRBS_error[6]),
+							 .led(error_display[2])
+							);
+	led_display led_display3(.clk(txusrclk2),
+							 .reset(PRBS_counter_reset),
+							 .blinker(blinker),
+							 .PRBS_error(PRBS_error[7]),
+							 .led(error_display[3])
+							);
+	
 	// boot state machine
 	localparam RESET	           = 4'd0;
 	localparam EN_TX     	     = 4'd1;    
@@ -318,15 +344,10 @@ module Top(
 				full_rx_reset[0:7] <= 8'b0000_0000;
 				PRBS_error_inject <= inject|ttc_bx0_dec_sync1_strobe; //connect to inject later
 				led_fp[0:3] <= 4'b1111;
-				led_fp[4] <=latched_error[4];
-				led_fp[5] <=latched_error[5];
-				led_fp[6] <=latched_error[6];
-				led_fp[7] <=latched_error[7];
-				//led_fp[4:7] <= latched_error[4:7] | blinker[4:7];
-				//led_fp[0:1] <= error_counter_out_0[0:1] | blinker[0:1];
-				//led_fp[2:3] <= error_counter_out_1[0:1] | blinker[0:1];
-				//led_fp[4:5] <= error_counter_out_2[0:1] | blinker[0:1];
-				//led_fp[6:7] <= error_counter_out_3[0:1] | blinker[0:1]; 
+				led_fp[4] <=error_display[0];
+				led_fp[5] <=error_display[1];
+				led_fp[6] <=error_display[2];
+				led_fp[7] <=error_display[3];
 				
 			end
 				default : begin
