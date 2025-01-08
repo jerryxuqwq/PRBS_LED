@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2025-01-07T01:11:06</DateModified>
+  <DateModified>2025-01-08T13:14:11</DateModified>
   <ModuleName>Top</ModuleName>
   <SummaryTimeStamp>2025-01-07T01:08:25</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/Jerry Xu/Desktop/OTMB/PRBS_LED/iseconfig/Top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/Jerry Xu/Desktop/OTMB/PRBS_LED\</ImplementationReportsDirectory>
+  <SavedFilePath>/home/jerryxu/ISE_project/PRBS_LED/iseconfig/Top.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>/home/jerryxu/ISE_project/PRBS_LED/</ImplementationReportsDirectory>
   <DateInitialized>2024-10-25T02:36:10</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

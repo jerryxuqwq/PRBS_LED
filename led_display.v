@@ -33,20 +33,34 @@ module led_display(
 			error1 <= 1'b0;
 			error2 <= 1'b0;
 			end
-		else if (PRBS_error == 1'b1 && error1 == 1'b0) begin //first error
-			led <= 1'b1;
-			error1 <= 1'b1;
-			end
-		else if (PRBS_error == 1'b1 && error1 == 1'b1) begin //first error
-			led <= blinker;
-			error1 <= 1'b1;
-			error2 <= 1'b1;
-			end
 		else begin
-			led <= 1'b0;
-			error1 <= 1'b0;
-			error2 <= 1'b0;
+			if (PRBS_error == 1'b1)
+				if (error1 == 1'b0) begin //first error
+					error2 <= 1'b0;
+					error1 <= 1'b1;
+					end
+				else if (error1 == 1'b1) begin
+					error1 <= 1'b1;
+					error2 <= 1'b1;
+					end
+				else begin
+					error1 <= 1'b0;
+					error2 <= 1'b0;
+			end
+			
+			if(error1 == 1'b1 && error2 == 1'b0)
+				led <= 1'b1;
+			else
+				led <= 1'b0;
+				
+			if(error1 == 1'b1 && error2 == 1'b1)
+				led <= blinker;
+			else
+				led <= 1'b0;
 		end
+		
+
+
 	end
 
 

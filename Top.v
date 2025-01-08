@@ -141,6 +141,7 @@ module Top(
 	reg ttc_resync_sync;
 	reg ttc_bxreset_sync;
 	wire ttc_bx0_dec_sync1_strobe;
+	wire inject_strobe;
 	// Cross time domain sync, go from Clk40 to txusrclk2
 	always @(posedge txusrclk2)
 	begin
@@ -156,6 +157,7 @@ module Top(
 	end
 	
 	strobe_converter dut(txusrclk2,ttc_bx0_dec_sync,ttc_bx0_dec_sync1_strobe);
+	strobe_converter inject_converter(txusrclk2,inject,inject_strobe);
 	IBUFDS #(
 		.DIFF_TERM("FALSE"),       // Differential Termination
 		.IBUF_LOW_PWR("TRUE"),     // Low power="TRUE", Highest performance="FALSE"
@@ -298,12 +300,12 @@ module Top(
 				
 				PRBS_reset <= 1'b0;
 				PRBS_error_inject <= 1'b1;
-				PRBS_counter_reset <= 1'b1;
+				PRBS_counter_reset <= 1'b0;
 				boot_up_counter_rst <= 1'b0;
 				full_tx_reset[0:7] <= 8'b0000_0000;
 				full_rx_reset[0:7] <= 8'b0000_0000;
 				led_fp[0:3] <= 4'b0110;
-				led_fp[4:7] <= latched_error[4:7] | blinker[4:7];
+				led_fp[4:7] <= PRBS_error[4:7];
 			end
 			
 			PRBS_INJECT_DONE :  begin
@@ -311,13 +313,13 @@ module Top(
 					nxtState <= PRBS_INJECT_CLEAR;
 				
 				PRBS_reset <= 1'b1;
-				PRBS_error_inject <= 1'b1;
+				PRBS_error_inject <= 1'b0;
 				PRBS_counter_reset <= 1'b1;
 				boot_up_counter_rst <= 1'b0;
 				full_tx_reset[0:7] <= 8'b0000_0000;
 				full_rx_reset[0:7] <= 8'b0000_0000;
 				led_fp[0:3] <= 4'b1000;
-				led_fp[4:7] <= latched_error[4:7] | blinker[4:7];
+				led_fp[4:7] <= PRBS_error[4:7];
 			end
 			
 			PRBS_INJECT_CLEAR :  begin
@@ -331,7 +333,7 @@ module Top(
 				full_tx_reset[0:7] <= 8'b0000_0000;
 				full_rx_reset[0:7] <= 8'b0000_0000;
 				led_fp[0:3] <= 4'b0111;
-				led_fp[4:7] <= latched_error[4:7] | blinker[4:7];
+				led_fp[4:7] <= PRBS_error[4:7];
 			end
 			
 			EN_PRBS_CK : begin
@@ -342,7 +344,7 @@ module Top(
 				boot_up_counter_rst <= 1'b1;
 				full_tx_reset[0:7] <= 8'b0000_0000;
 				full_rx_reset[0:7] <= 8'b0000_0000;
-				PRBS_error_inject <= inject|ttc_bx0_dec_sync1_strobe; //connect to inject later
+				PRBS_error_inject <= inject_strobe |ttc_bx0_dec_sync1_strobe; //connect to inject later
 				led_fp[0:3] <= 4'b1111;
 				led_fp[4] <=error_display[0];
 				led_fp[5] <=error_display[1];
