@@ -42,6 +42,7 @@ module Top(
 	//output wire [0:4] state_status
 	
     );
+
 	wire slow_clk40;
 	wire clk40;
 	wire txusrclk2;
@@ -79,7 +80,8 @@ module Top(
 	wire [0:7] rx_reset_done;
 	//wire [0:7] PRBS_error;
 	wire [0:31] counter_out;
-
+	wire de_reset;
+	wire de_inject;
 	
 	// temp tie off
 	
@@ -156,8 +158,8 @@ module Top(
 	
 	end
 	
-	strobe_converter dut(txusrclk2,ttc_bx0_dec_sync,ttc_bx0_dec_sync1_strobe);
-	strobe_converter inject_converter(txusrclk2,inject,inject_strobe);
+	strobe_converter dut(txusrclk2,ttc_bx0_dec,ttc_bx0_dec_sync1_strobe);
+	strobe_converter inject_converter(txusrclk2,de_inject,inject_strobe);
 	IBUFDS #(
 		.DIFF_TERM("FALSE"),       // Differential Termination
 		.IBUF_LOW_PWR("TRUE"),     // Low power="TRUE", Highest performance="FALSE"
@@ -179,7 +181,17 @@ module Top(
 	counter boot_up_counter(slow_clk40,
 			boot_up_counter_rst,
 			counter_out);
-	
+
+	debouncer reset_de(
+	.clk(clk40),
+	.btn(reset),
+	.out(de_reset)
+	);
+	debouncer inject_de(
+	.clk(clk40),
+	.btn(reset),
+	.out(de_inject)
+	);
 /* 	wire  [0:1]error_counter_out_0;
 	wire  [0:1]error_counter_out_1;
 	wire  [0:1]error_counter_out_2;
@@ -230,7 +242,7 @@ module Top(
 	assign state_status = state;
 	// reset 
     always @ (posedge clk40 or posedge ttc_resync_sync)
-		if (reset|ttc_resync_sync)
+		if (de_reset|ttc_resync_sync)
 			state <= RESET;
 		else
 			state <= nxtState;
