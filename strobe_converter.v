@@ -21,26 +21,13 @@
 module strobe_converter(
 	 input wire clk,
 	 input wire in,
-	 output reg out
+	 output wire out
     );
-	reg reset;
-	reg in_prev;
+	reg delay;
 	always@(posedge clk)
 	begin
-		in_prev <= in;
-		if(in_prev ==0  & in ==1 ) begin//posedge
-		out <=1;
-		end
-		else if(in_prev == 1 & in ==0 ) begin//negedge
-		out <=0;
-		end
-		else begin
-		out <=0;
-		end
-		
+		delay <= in;
 	end
-	
+	assign out= in & ~delay;
 	 
-
-
 endmodule

@@ -228,9 +228,9 @@ module Top(
 							);
 	
 	// boot state machine
-	localparam RESET	           = 4'd0;
+	localparam RESET	         = 4'd0;
 	localparam EN_TX     	     = 4'd1;    
-	localparam EN_TX_DONE     	  = 4'd2;
+	localparam EN_TX_DONE     	 = 4'd2;
 	localparam EN_RX             = 4'd3;
 	localparam EN_RX_DONE        = 4'd4;
 	localparam PRBS_INJECT 	     = 4'd5;
@@ -939,5 +939,22 @@ module Top(
         .TXPOLARITY_IN                  (tied_to_ground_i)
 
     );
-
+	wire [35:0] CONTROL0;
+	wire [35:0] CONTROL1;
+	ICON i_ICON (
+    .CONTROL0(CONTROL0), // INOUT BUS [35:0]
+    .CONTROL1(CONTROL1) // INOUT BUS [35:0]
+	);
+	ILA i_ILA (
+    .CONTROL(CONTROL0), // INOUT BUS [35:0]
+    .CLK(userclk2), // IN
+    .TRIG0({ttc_bx0_dec,ttc_bx0_dec_sync1_strobe,5'b1})
+	); 
+	
+	VIO i_VIO (
+    .CONTROL(CONTROL1), // INOUT BUS [35:0]
+    .ASYNC_IN(led_fp) // IN BUS [7:0]
+    //.ASYNC_OUT() // OUT BUS [7:0]
+	);
+	
 endmodule
