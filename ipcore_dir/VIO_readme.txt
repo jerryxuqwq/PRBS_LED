@@ -1,5 +1,5 @@
 The following files were generated for 'VIO' in directory
-C:\Users\Jerry Xu\Desktop\OTMB\PRBS_LED\ipcore_dir\
+/home/cscdev/JerryX/OTMB/PRBS_LED/ipcore_dir/
 
 XCO file generator:
    Generate an XCO file for compatibility with legacy flows.

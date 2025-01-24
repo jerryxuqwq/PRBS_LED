@@ -53,7 +53,7 @@ module Top(
 	// parameter setting
 	parameter   WRAPPER_SIM_GTXRESET_SPEEDUP    = 0;    // Set to 1 to speed up sim reset
 	wire [0:2] PRBS_mode;
-	assign PRBS_mode = 3'b100;// 000: Standard operation mode (PRBS check is off)
+	assign PRBS_mode = 3'b011;// 000: Standard operation mode (PRBS check is off)
 								 // 001: PRBS-7
 								 // 010: PRBS-15
 								 // 011: PRBS-23
@@ -71,7 +71,6 @@ module Top(
 	// misc wire
 	wire q1_clk1_refclk_i_bufg;
 	
-	//wire clk40;
 	
 
 	wire txoutclk;
@@ -189,7 +188,7 @@ module Top(
 	);
 	debouncer inject_de(
 	.clk(clk40),
-	.btn(reset),
+	.btn(inject),
 	.out(de_inject)
 	);
 /* 	wire  [0:1]error_counter_out_0;
@@ -201,12 +200,17 @@ module Top(
 	counter_noover counter_noover_1(.clk(txusrclk2),.enable(PRBS_error[5]),.rst(PRBS_counter_reset),.out(error_counter_out_1[0:1]));
 	counter_noover counter_noover_2(.clk(txusrclk2),.enable(PRBS_error[6]),.rst(PRBS_counter_reset),.out(error_counter_out_2[0:1]));
 	counter_noover counter_noover_3(.clk(txusrclk2),.enable(PRBS_error[7]),.rst(PRBS_counter_reset),.out(error_counter_out_3[0:1])); */
+
 	wire [0:3] error_display;
+	wire [0:1]out1,out0;
 	led_display led_display0(.clk(txusrclk2),
 							 .reset(PRBS_counter_reset),
 							 .blinker(blinker),
 							 .PRBS_error(PRBS_error[4]),
-							 .led(error_display[0])
+							 .led(error_display[0]),
+							 .out0(out0),
+							 .out1(out1)
+							 
 							);
 	led_display led_display1(.clk(txusrclk2),
 							 .reset(PRBS_counter_reset),
@@ -356,7 +360,7 @@ module Top(
 				boot_up_counter_rst <= 1'b1;
 				full_tx_reset[0:7] <= 8'b0000_0000;
 				full_rx_reset[0:7] <= 8'b0000_0000;
-				PRBS_error_inject <= inject_strobe |ttc_bx0_dec_sync1_strobe; //connect to inject later
+				PRBS_error_inject <= de_inject |ttc_bx0_dec_sync1_strobe; //connect to inject later
 				led_fp[0:3] <= 4'b1111;
 				led_fp[4] <=error_display[0];
 				led_fp[5] <=error_display[1];
@@ -945,10 +949,12 @@ module Top(
     .CONTROL0(CONTROL0), // INOUT BUS [35:0]
     .CONTROL1(CONTROL1) // INOUT BUS [35:0]
 	);
+	wire doubleusr;
+
 	ILA i_ILA (
     .CONTROL(CONTROL0), // INOUT BUS [35:0]
-    .CLK(userclk2), // IN
-    .TRIG0({ttc_bx0_dec,ttc_bx0_dec_sync1_strobe,5'b1})
+    .CLK(txusrclk2), // IN
+    .TRIG0({ttc_bx0_dec,ttc_bx0_dec_sync1_strobe,PRBS_error[7],out0,out1})
 	); 
 	
 	VIO i_VIO (

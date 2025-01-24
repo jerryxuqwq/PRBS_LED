@@ -18,12 +18,13 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module clock_divider(clock_in,clock_out
+module clock_divider #(parameter DIVISOR = 28'd4_000_000)
+(clock_in,clock_out
     );
 input clock_in; // input clock on FPGA
 output reg clock_out; // output clock after dividing the input clock by divisor
 reg[27:0] counter=28'd0;
-parameter DIVISOR = 28'd4_000_000;
+
 // The frequency of the output clk_out
 //  = The frequency of the input clk_in divided by DIVISOR
 // For example: Fclk_in = 50Mhz, if you want to get 1Hz signal to blink LEDs

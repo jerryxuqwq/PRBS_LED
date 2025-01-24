@@ -1,5 +1,5 @@
 The following files were generated for 'ICON' in directory
-C:\Users\Jerry Xu\Desktop\OTMB\PRBS_LED\ipcore_dir\
+/home/cscdev/JerryX/OTMB/PRBS_LED/ipcore_dir/
 
 XCO file generator:
    Generate an XCO file for compatibility with legacy flows.
@@ -33,6 +33,7 @@ Generate ISE subproject:
 
    * ICON.gise
    * ICON.xise
+   * _xmsgs/pn_parser.xmsgs
 
 Deliver Readme:
    Readme file for the IP.

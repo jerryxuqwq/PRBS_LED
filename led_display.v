@@ -23,44 +23,55 @@ module led_display(
 	input reset,
 	input blinker,
     input PRBS_error,
-    output reg led
+    output reg led,
+	 output wire [0:1]out1,
+	 output wire [0:1]out0
     );
-	reg error1, error2;
+	reg rst0,rst1,error1,error2;
 	
+	counter_noover error_count0(
+    .clk(clk),            // Clock signal
+	 .enable(PRBS_error),         // Enable signal
+    .rst(rst0),          // Active-high Reset signal
+    .out(out0)    // 2-bit output counter
+	 );
+	 	counter_noover error_count1(
+    .clk(clk),            // Clock signal
+	 .enable(PRBS_error),         // Enable signal
+    .rst(rst1),          // Active-high Reset signal
+    .out(out1)    // 2-bit output counter
+	 );
 	always@(posedge clk or posedge reset) begin
 		if (reset) begin
+			rst0<= 1'b1;
+			rst1<= 1'b1;
 			led <= 1'b0;
 			error1 <= 1'b0;
 			error2 <= 1'b0;
 			end
 		else begin
-			if (PRBS_error == 1'b1)
-				if (error1 == 1'b0) begin //first error
-					error2 <= 1'b0;
-					error1 <= 1'b1;
-					end
-				else if (error1 == 1'b1) begin
-					error1 <= 1'b1;
-					error2 <= 1'b1;
-					end
-				else begin
-					error1 <= 1'b0;
-					error2 <= 1'b0;
+			
+			if (out0 == 2'b11 && out1 < 2'b11) begin
+				error1 <= 1'b1;
+				error2 <= 1'b0;
+				rst1<= 1'b0;
+				led <= 1'b1;
 			end
 			
-			if(error1 == 1'b1 && error2 == 1'b0)
-				led <= 1'b1;
-			else
-				led <= 1'b0;
-				
-			if(error1 == 1'b1 && error2 == 1'b1)
+			else if(out0 == 2'b11 && out1 == 2'b11) begin
 				led <= blinker;
-			else
+				rst0<= 1'b0;
+				rst1<= 1'b0;
+			end
+			
+			else begin
+				rst0<= 1'b0;
+				rst1<= 1'b1;
 				led <= 1'b0;
+			end
+		
 		end
 		
-
-
 	end
 
 
